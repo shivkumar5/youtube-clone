@@ -15,54 +15,6 @@ $spacing-unit: 4px;
   box-sizing: border-box;
 }
 
-$space-amounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ); 
-$sides: (top, bottom, left, right); 
-
-@each $space in $space-amounts {
-  @each $side in $sides {
-    .m--#{$space} {
-      margin: $spacing-unit * $space !important;
-    }
-    .m--#{str-slice($side, 0, 1)}--#{$space} {
-      margin-#{$side}: $spacing-unit * $space !important;
-    }
-    .p--#{$space} {
-      padding: $spacing-unit * $space !important;
-    }
-    .p--#{str-slice($side, 0, 1)}--#{$space} {
-      padding-#{$side}: $spacing-unit * $space !important;
-    }
-  }
-}
-
-// left and right margin, padding
-// ------------------------------------
-
-@each $space in $space-amounts {
-  .m--h--#{$space} {
-    margin-left: $spacing-unit * $space !important;
-    margin-right: $spacing-unit * $space !important;
-  }
-  .p--h--#{$space} {
-    padding-left: $spacing-unit * $space !important;
-    padding-right: $spacing-unit * $space !important;
-  }
-}
-
-// top and bottom margin, padding
-// ------------------------------------
-
-@each $space in $space-amounts {
-  .m--v--#{$space} {
-    margin-top: $spacing-unit * $space !important;
-    margin-bottom: $spacing-unit * $space !important;
-  }
-  .p--v--#{$space} {
-    padding-top: $spacing-unit * $space !important;
-    padding-bottom: $spacing-unit * $space !important;
-  }
-}
-
 body{
   background: $black-primary;
   background-attachment: fixed;
