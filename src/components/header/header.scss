@@ -1,6 +1,6 @@
 .header{
   display: flex;
-  // justify-content: space-between;
+  background-color: #212121;
   align-items: center;
   padding: 20px;
   &__search{
@@ -16,17 +16,44 @@
   }
   &__form{
     display: flex;
+    border: 1px solid #4c4c4c;
+    border-radius: 2px 0;
   }
 }
 
 .header__form__input{
   width: 90%;
-  background: #16181b;
-  border-right: 0;
+  background: transparent;
+  border:none;
+  color: #b1bdb4;
+  &:focus{
+    outline: none;
+  }
 }
 .header__form__button{
   width: 10%;
-  background: #16181b;
-  border-left: 0;
+  background: #ffffff;
+  opacity: 8%;
+  border: none;
   color:#b1bdb4;
+}
+
+@media (max-width: 520px ){
+  .header{
+    padding: 1rem;
+
+    &__logo {
+      display: block;
+    }
+
+    &__form{
+      flex: 1;
+    }
+
+    &__menu>* {
+      display: none;
+    }
+
+
+  }
 }

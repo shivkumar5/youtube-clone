@@ -1,40 +1,48 @@
 import React from 'react';
 import './header.scss';
+import PropTypes from 'prop-types';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoLogoYoutube, IoMdNotifications } from 'react-icons/io';
 import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { CgProfile, CgSearch } from 'react-icons/cg';
-const Header = () => {
+const Header = ({ handleSidenavToggle }) => {
   return (
     <div className="header">
       <div className="header__logo">
-        <GiHamburgerMenu size={24}/>
+        <GiHamburgerMenu size={24}
+          onClick = { () => handleSidenavToggle(false) }
+          style={{ cursor: 'pointer' }}/>
         <>
         <IoLogoYoutube size={24}
-          className="m--l--5"/>
+          style={{ marginLeft: 20, cursor: 'pointer' }}/>
            Youtube
         </>
       </div>
       <div className="header__search">
-        <form className="hedaer__form">
+        <form className="header__form">
           <input type="text"
             className="header__form__input"
             placeholder="Search"/>
           <button type="submit"
             className="header__form__button">
-            <CgSearch/>
+            <CgSearch size={22}/>
           </button>
         </form>
       </div>
       <div className="header__menu">
-        <BsFillGrid3X3GapFill size={24}/>
-        <IoMdNotifications className="m--l--4"
+        <BsFillGrid3X3GapFill size={24}
+          style={{ cursor: 'pointer' }}/>
+        <IoMdNotifications style={{ marginLeft: 16, cursor: 'pointer' }}
           size={24}/>
-        <CgProfile className="m--l--4"
+        <CgProfile style={{ marginLeft: 16, cursor: 'pointer' }}
          size={24} />
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  handleSidenavToggle: PropTypes.func
 };
 
 export default Header;
