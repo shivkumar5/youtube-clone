@@ -22,6 +22,7 @@ body{
   letter-spacing: 0.1px;
 }
 .app__container {
+  position: relative;
   display: flex;
   height: 90vh;
 }
