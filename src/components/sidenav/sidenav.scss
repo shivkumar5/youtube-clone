@@ -1,4 +1,8 @@
 .sidenav {
+  position: fixed;
+  top:40px;
+  z-index: 999;
+  height: 100%;
   background: #212121;
   display: flex;
   flex-direction: column;
