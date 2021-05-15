@@ -13,7 +13,10 @@ const Home = () => {
       {
         [...new Array(20)].map((item, i) => {
           return (
-              <VideoItem key={i + 'i'}/>
+            <div key={i + 'i'}
+              style={{ marginBottom: 16 }}>
+              <VideoItem />
+            </div>
           );
         })
       }

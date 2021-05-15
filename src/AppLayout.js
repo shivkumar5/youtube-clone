@@ -10,6 +10,7 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
+import Search from './components/sidenav/search/Search';
 function AppLayout ({ children }) {
   const [showSidenav, toggleSidenav] = useState(false);
   const handleSidenavToggle = () => toggleSidenav(state => !state);
@@ -32,7 +33,7 @@ function AppLayout ({ children }) {
                 <Home showSidenav={showSidenav} />
               </Route>
               <Route path="/search">
-                Search page
+                <Search/>
               </Route>
               <Route path="*">
                   <Redirect to="/"/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './header.scss';
 import PropTypes from 'prop-types';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -6,6 +7,10 @@ import { IoLogoYoutube, IoMdNotifications } from 'react-icons/io';
 import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { CgProfile, CgSearch } from 'react-icons/cg';
 const Header = ({ handleSidenavToggle }) => {
+  const history = useHistory();
+  const submitQuery = () => {
+    history.push('/search');
+  };
   return (
     <div className="header">
       <div className="header__logo">
@@ -14,6 +19,7 @@ const Header = ({ handleSidenavToggle }) => {
           style={{ cursor: 'pointer' }}/>
         <>
         <IoLogoYoutube size={24}
+          onClick = {() => history.push('/')}
           style={{ marginLeft: 20, cursor: 'pointer' }}/>
            Youtube
         </>
@@ -23,7 +29,9 @@ const Header = ({ handleSidenavToggle }) => {
           <input type="text"
             className="header__form__input"
             placeholder="Search"/>
-          <button type="submit"
+          <button
+            type="button"
+            onClick={submitQuery}
             className="header__form__button">
             <CgSearch size={22}/>
           </button>
