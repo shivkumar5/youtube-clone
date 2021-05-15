@@ -1,19 +1,4 @@
-@import "~bootstrap/scss/bootstrap";
-
-$text-color: #b1bdb4;
-$black-primary: #16181b;
-$black-secondary: #121417;
-$border-color: #4c4c4c;
-
-$breakpoint-medium: 1224px;
-$breakpoint-small: 520px;
-$spacing-unit: 4px;
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import './base.scss';
 
 body{
   background: $black-primary;
@@ -23,6 +8,5 @@ body{
 }
 .app__container {
   position: relative;
-  display: flex;
-  height: 90vh;
+  top: 100px;
 }

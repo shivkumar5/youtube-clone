@@ -13,7 +13,7 @@ import {
 
 const Sidenav = ({ showSidenav, handleSidenavToggle }) => {
   return (
-    <nav className={ showSidenav ? 'sidenav open' : 'sidenav close'}
+    showSidenav && <nav className={ showSidenav ? 'sidenav open' : 'sidenav close'}
       onClick={() => handleSidenavToggle(false) }>
       <li>
         <MdHome size={23} />

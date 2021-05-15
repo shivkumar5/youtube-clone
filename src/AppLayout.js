@@ -3,7 +3,6 @@ import Header from './components/header/Header';
 import PropTypes from 'prop-types';
 import Sidenav from './components/sidenav/Sidenav';
 import Home from './components/home/Home';
-import { Container } from 'react-bootstrap';
 
 import {
   BrowserRouter as Router,
@@ -22,12 +21,15 @@ function AppLayout ({ children }) {
         <div className="app__container">
           <Sidenav showSidenav={showSidenav}
             handleSidenavToggle={handleSidenavToggle}/>
-          <Container fluid
-            className="app__main">
+          <div
+            style={{
+              marginLeft: showSidenav ? '300px' : '40px',
+              position: 'absolute'
+            }}>
             <Switch>
               <Route path="/"
                 exact>
-                <Home/>
+                <Home showSidenav={showSidenav} />
               </Route>
               <Route path="/search">
                 Search page
@@ -36,7 +38,7 @@ function AppLayout ({ children }) {
                   <Redirect to="/"/>
               </Route>
             </Switch>
-          </Container>
+          </div>
         </div>
       </div>
     </Router>
